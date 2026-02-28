@@ -8,16 +8,14 @@ import os
 app = Flask(__name__)
 
 # ---------- DATABASE CONFIG (AZURE POSTGRESQL – FIXED) ----------
-app.config["SQLALCHEMY_DATABASE_URI"] = (
-    f"postgresql://{os.getenv('PGUSER')}:{os.getenv('PGPASSWORD')}"
-    f"@{os.getenv('PGHOST')}:{os.getenv('PGPORT')}/{os.getenv('PGDATABASE')}"
-    "?sslmode=require"
-)
-
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = "supersecretkey"  # change later in production
 
 db = SQLAlchemy(app)
+
+with app.app_context():
+    db.create_all()
 
 # ---------- USER MODEL ----------
 class User(db.Model):
@@ -157,3 +155,4 @@ def forgot_password():
 # ---------- RUN ----------
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=False, port=8000)
+
