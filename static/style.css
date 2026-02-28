@@ -1,0 +1,236 @@
+/* =====================
+   GLOBAL RESET & FONT
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    /* Black overlay + background image */
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("/static/img/b.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #ffffff;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #4f46e5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.nav-links a:hover {
+    color: #4f46e5;
+}
+
+/* =====================
+   HERO SECTION (HOME)
+===================== */
+.hero {
+    min-height: calc(100vh - 70px);
+    margin-top: 70px;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1100px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #e0e7ff;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.cta-btn {
+    width: fit-content;
+    padding: 14px 36px;
+    font-size: 15px;
+    font-weight: 700;
+    background: #ff1f5a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    background: #e11d48;
+}
+
+/* =====================
+   AUTH PAGES (LOGIN / REGISTER / OPTION)
+===================== */
+.auth-wrapper {
+    min-height: 100vh;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 380px;
+    background: #ffffff;
+    padding: 36px 34px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Headings */
+.container h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 18px;
+}
+
+/* Text */
+.container p {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Inputs */
+.container input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    margin-bottom: 16px;
+}
+
+.container input:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+/* Buttons */
+.container button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    background: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background: #4f46e5;
+}
+
+/* Links */
+.link {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.link a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   FLASH MESSAGES
+===================== */
+.flash {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.flash.user-error {
+    background: #fff7ed;
+    color: #92400e;
+    border: 1px solid #fed7aa;
+}
+
+.flash.password-error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.flash.success {
+    background: #ecfeff;
+    color: #065f46;
+    border: 1px solid #99f6e4;
+}
